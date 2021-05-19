@@ -1,14 +1,19 @@
 <template>
-    <div 
-      class="beer"
-      >
-        <h3>
-          {{beer.name}} 
-        </h3>
-        <br>
-        <h4>{{beer.brand}}</h4>
-        <h4>{{beer.description}}</h4>
+  
+
+    <div>
+      <ul class="list-unstyled">
+        <b-media tag="li" class="bg-color-red">
+          <br>
+          <h2 class="mt-0 mb-1 text-center">{{beer.name}}</h2>         
+          <h4 class="mt-0 mb-1 text-center">{{beer.brand}}</h4>
+          <p class="mb-0 mb-1 text-center">{{beer.description}}</p>
+          <p class="mb-0 mb-1 text-center">ABV: {{beer.ABV}}</p>
+          
+        </b-media>
+      </ul>
     </div>
+    
 </template>
 
 <script>
@@ -25,16 +30,5 @@ export default {
 </script>
 
 <style scoped>
-  .card {
-    background: #f4f4f4;
-    place-content: center;
-    padding: 0em 1em 1em 1em;
-    width: 18rem;
-    display: flex;
-    float: none;
-    align-items: center;
-    justify-content: space-between;
-    margin: auto;
-    padding: 10px 20px;
-}
+
 </style>

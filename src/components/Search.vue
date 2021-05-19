@@ -1,11 +1,12 @@
 <template>
+  
   <form class="search">
     <input
       type="text"
       :value="beerQuery"
       @keyup="handleChange"
     />
-    <input @click="handleSubmit" type="submit" value="search" />
+    <input @click="handleSubmit" type="submit" value="Search" />
   </form>
 </template>
 
@@ -36,3 +37,12 @@ export default {
   
 }
 </script>
+
+<style scoped>
+  .search {
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem;
+    
+  }
+</style>

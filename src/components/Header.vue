@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <h1>{{ title }}</h1>
+    <h1 class="text-center">{{ title }}</h1>
+    <h4 class="text-center text-muted">{{ welcome }}</h4>
     
   </div>
 </template>
@@ -10,8 +11,8 @@
 export default {
   name: 'Header',
   props: {
-    title: String
-    
+    title: String,
+    welcome: String
   },
   
   components: {
@@ -21,13 +22,7 @@ export default {
 </script>
 
 <style scoped>
-  .container {
-    width: 100%;    
-    place-content: center;
-    border: 10px solid rgb(blue);
-    z-index: 100;    
-  }
-
+  
   h1 {
     font-size: 48px;
   }
