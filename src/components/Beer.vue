@@ -3,7 +3,7 @@
 
     <div>
       <ul class="list-unstyled">
-        <b-media tag="li" class="bg-color-red">
+        <b-media tag="li" >
           <br>
           <h2 class="mt-0 mb-1 text-center">{{beer.name}}</h2>         
           <h4 class="mt-0 mb-1 text-center">{{beer.brand}}</h4>

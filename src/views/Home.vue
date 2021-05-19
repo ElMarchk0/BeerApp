@@ -12,9 +12,9 @@
 
 <script>
 // @ is an alias to /src
-import Header from './Header.vue'
-import Search from './Search.vue'
-import Beer from './Beer.vue'
+import Header from '../components/Header.vue'
+import Search from '../components/Search.vue'
+import Beer from '../components/Beer.vue'
 import { beerApi } from '../hooks/beerApi.js'
 
 export default {
