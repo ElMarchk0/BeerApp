@@ -1,11 +1,5 @@
 <template>
-  <p>Created by Peter Charlesworth in 2021</p>
-  <router-link to="/">Go Back</router-link>
+  <div class="about">
+    <h2>This is an about page</h2>
+  </div>
 </template>
-
-<script>
-export default {
-
-}
-</script>
-

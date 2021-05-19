@@ -1,12 +1,14 @@
 <template>
   <div class="home">
     <div class="header_search fixed-top">
-    <Header :title="'The Great Victoria Beer Api'" :welcome="'Search for beer brewed in and around Victoria, Canada!'"/>
-    <Search :search="state.search" @search="handleSearch" />
+      <Header :title="'The Great Victoria Beer Api'" :welcome="'Search for beer brewed in and around Victoria, Canada!'"/>
+      <Search :search="state.search" @search="handleSearch" />
     </div>
-    <div class="beers">
-      <Beer v-for="beer in state.data" :beer="beer" :key="beer.id"/>
-    </div>
+      
+      <div class="beers">
+        <Beer v-for="beer in state.data" :beer="beer" :key="beer.id"/>
+      </div>
+        
   </div>
 </template>
 
@@ -15,19 +17,18 @@
 import Header from '../components/Header.vue'
 import Search from '../components/Search.vue'
 import Beer from '../components/Beer.vue'
-import { beerApi } from '../hooks/beerApi.js'
 
+import { beerApi } from '../hooks/beerApi.js'
 export default {
   name: 'Home',
   components: {
     Header,
     Search,
-    Beer,
+    Beer,    
+    
   },
-
   setup() {
     const state = beerApi()
-
       return {
       state,
       handleSearch(searchTerm) {
@@ -47,6 +48,6 @@ export default {
     z-index: 1;
   }
   .beers{
-    margin-top: 5em;
+    margin-top: 10em;
   }
 </style>
