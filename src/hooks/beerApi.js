@@ -9,15 +9,13 @@ export const beerApi = () => {
   })
 
   watch(() => {
-    const BEER_API_URL =`http://localhost:3000/beers?q=${state.search}`
+    const BEER_API_URL = `https://morning-tor-81265.herokuapp.com/beers`
 
     axios
-      .get(BEER_API_URL)
-      .then((response) => {
-        
-        console.log(response.data)
-        state.data = response.data
-        console.log(state.data)
+      .get(`${BEER_API_URL}?q=${state.search}`)
+      .then((response) => {        
+        state.data = response.data  
+        console.log(response.data)      
         state.loading = false
       })
 

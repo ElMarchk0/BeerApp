@@ -1,21 +1,39 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-    <div class="footer">
-    <Footer />
-    </div>
+    <Navbar 
+      :search="state.search" 
+      @search="handleSearch"
+    />
+         
+      <div class="beers">
+        <Beer v-for="beer in state.data" :beer="beer" :key="beer.id"/>
+      </div>
+    <router-view />
+    
   </div>
 </template>
 
 <script>
-import Footer from './components/Footer'
+
+import Navbar from './components/Navbar.vue'
+import { beerApi } from './hooks/beerApi.js'
+import Beer from './components/Beer.vue'
+
 export default {
   components: {
-    Footer
+    
+    Navbar,
+    Beer
+  },
+  setup() {
+    const state = beerApi()
+      return {
+      state,
+      handleSearch(searchTerm) {
+        state.loading = true;
+        state.search = searchTerm;
+      }
+    };
   }
 }
 </script>
