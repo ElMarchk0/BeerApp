@@ -1,26 +1,26 @@
 <template>
   <div>
-  <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#" class="te">The Great Victoria Beer API</b-navbar-brand>
+  <b-navbar toggleable="lg" type="dark" variant="info" class="navbar navbar-dark bg-dark justify-content-between">
+    <b-navbar-brand href="/">The Great Victoria Beer API</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
       
       <!-- Search Input -->
-      <b-navbar-nav class="ml-auto">
-        <b-nav-form>
+      <b-navbar-nav class="mx-auto">
+        <b-nav-form class="mx-auto">
           <input
             type="text"
             :value="beerQuery"
             @keyup="handleChange"
           />
-        <input @click="handleSubmit" type="submit" value="Search" />
+        <input @click="handleSubmit" class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search" />
         </b-nav-form> 
-        <b-navbar-nav>
+        <b-navbar-nav class="mx-auto">
         <!-- Links -->
         <b-nav-item href="/about">About</b-nav-item>
-        <b-nav-item href="#">API</b-nav-item>
+        <b-nav-item href="https://morning-tor-81265.herokuapp.com/beers">API</b-nav-item>
         <b-nav-item href="https://github.com/ElMarchk0/BeerApp">Github</b-nav-item>
       </b-navbar-nav>
         

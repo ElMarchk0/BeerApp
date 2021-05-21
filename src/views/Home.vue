@@ -1,27 +1,22 @@
 <template>
-  <div class="home">
+  <div class="welcome">
+   <Welcome />
    
-      
-      <div class="beers">
-        <Beer v-for="beer in state.data" :beer="beer" :key="beer.id"/>
-      </div>
-        
   </div>
+  
+  
+  
 </template>
 
 <script>
-// @ is an alias to /src
-// import Header from '../components/Header.vue'
-// import Search from '../components/Search.vue'
-import Beer from '../components/Beer.vue'
+import Welcome from '../components/Welcome'
 
 import { beerApi } from '../hooks/beerApi.js'
+
 export default {
   name: 'Home',
-  components: {
-    // Header,
-    // Search,
-    Beer,    
+  components: {    
+    Welcome,   
     
   },
   setup() {
@@ -38,13 +33,10 @@ export default {
 </script>
 
 <style scoped>
-  .header_search{
-    background: rgb(170, 176, 238);
+  .welcome{
     justify-content: center;
-    padding: 1rem;    
+    margin: 2.5vmax;   
     z-index: 1;
   }
-  .beers{
-    margin-top: 10em;
-  }
+  
 </style>

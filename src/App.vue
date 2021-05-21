@@ -3,12 +3,18 @@
     <Navbar 
       :search="state.search" 
       @search="handleSearch"
-    />
-         
+      
+    /> 
+    <div v-if="state.search === null">
+      <router-view
+      
+      ></router-view>
+    </div> 
+    <div v-else>      
       <div class="beers">
         <Beer v-for="beer in state.data" :beer="beer" :key="beer.id"/>
       </div>
-    <router-view />
+    </div> 
     
   </div>
 </template>
@@ -19,11 +25,13 @@ import Navbar from './components/Navbar.vue'
 import { beerApi } from './hooks/beerApi.js'
 import Beer from './components/Beer.vue'
 
+
 export default {
   components: {
     
     Navbar,
-    Beer
+    Beer,
+    
   },
   setup() {
     const state = beerApi()
@@ -45,27 +53,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+    
+  
 }
 
-#nav {
-  padding: 30px;
-}
+.beers{
+    margin-top: 1em;
+    padding-bottom: 1em
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-
-.footer {
-                   
-  bottom:0;                         
-   
-  justify-content: center;
-  margin: auto;
-}
 
 </style>
