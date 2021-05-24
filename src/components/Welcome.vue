@@ -1,5 +1,5 @@
 <template>
-  <div class="m-auto" style="width: 75vh; margin: 5vmax; padding-bottom: 2em">
+  <div class="m-auto" style="width: 60vh; margin: 5vmax; padding-bottom: 2em">
  
   <div>
     <h4>Welcome to the Victoria Beer API</h4>

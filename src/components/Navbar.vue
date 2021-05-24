@@ -20,7 +20,6 @@
         <b-navbar-nav class="mx-auto">
         <!-- Links -->
         <b-nav-item href="/about">About</b-nav-item>
-         <b-nav-item href="/beer">test</b-nav-item>
         <b-nav-item href="https://morning-tor-81265.herokuapp.com/beers">API</b-nav-item>
         <b-nav-item href="https://github.com/ElMarchk0/BeerApp">Github</b-nav-item>
       </b-navbar-nav>
