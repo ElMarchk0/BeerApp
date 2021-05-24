@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "node server.js"
+    "start": "node server.js",
+    "json-server": "json-server --nc src/api/beersV2.json"
   },
   "dependencies": {
     "@vue/composition-api": "^1.0.0-rc.8",

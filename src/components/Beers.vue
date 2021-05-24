@@ -19,7 +19,7 @@
 <script>
 import { computed } from '@vue/composition-api'
 export default {
-  name: 'Beer',
+  name: 'Beers',
   props: ['beer'],
   setup({ beer }) {
     const beers =  computed(() => beer.name)

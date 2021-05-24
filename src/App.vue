@@ -12,7 +12,7 @@
     </div> 
     <div v-else>      
       <div class="beers">
-        <Beer v-for="beer in state.data" :beer="beer" :key="beer.id"/>
+        <Beers v-for="beer in state.data" :beer="beer" :key="beer.id"/>
       </div>
     </div> 
     
@@ -20,19 +20,16 @@
 </template>
 
 <script>
-
-import Navbar from './components/Navbar.vue'
-import { beerApi } from './hooks/beerApi.js'
-import Beer from './components/Beer.vue'
-
+import Navbar from '@/components/Navbar.vue'
+import { beerApi } from '@/hooks/beerApi.js'
+import Beers from '@/components/Beers.vue'
 
 export default {
-  components: {
-    
+  components: {    
     Navbar,
-    Beer,
-    
+    Beers,    
   },
+
   setup() {
     const state = beerApi()
       return {
