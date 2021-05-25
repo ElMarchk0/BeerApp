@@ -19,8 +19,9 @@ const routes = [
     component: About,
   },
   {
-    path: '/beer/:id',
+    path: '/beer?=:id',
     name: 'BeerView',
+    props: true,
     component: () => '@/views/BeerView.vue'
   }
 

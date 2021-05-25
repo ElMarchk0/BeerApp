@@ -47,12 +47,9 @@ export default {
         console.log(beerQuery.value)
       },
       handleChange(event) {
-        beerQuery.value = event.target.value
-        
+        beerQuery.value = event.target.value        
       }
     }
-    
-    
-  },
+  }
 }
 </script>

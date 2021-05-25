@@ -21,4 +21,3 @@ export const beerApi = () => {
 
   return state
 }
-
