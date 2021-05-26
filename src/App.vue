@@ -6,9 +6,7 @@
       
     /> 
     <div v-if="state.search === null">
-      <router-view
-      
-      ></router-view>
+      <router-view />
     </div> 
     <div v-else>      
       <div class="beers">

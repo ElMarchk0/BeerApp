@@ -2,34 +2,33 @@
   <div>
     <div class="card" style="width: 25rem">    
       <div class="card-body">
-        <h3 class="card-title">{{beer.id}}</h3>
-        <h5 class="card-title">{{beer.name}}</h5>
+        <h3 class="card-title">Beername: {{beer.name}}</h3>
+        <h5 class="card-title">{{beer.brand}}</h5>
         Test
-      </div>
+      </div> 
+      Test
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import { useRoute } from 'vue-router';
+import { useStore } from 'vuex';
+import { ref, onMounted } from 'vue';
 
 export default {
-  name: 'BeerView',
-  data () {
+  setup () {
+    const route = useRoute();
+    const store = useStore();
+    const beer = ref({})
+    onMounted(() => {
+      beer.value = store.getters.getSpecificBeer(route.params.id)
+    });
     return {
-      beer: null,
-      router: this.$route.params.id
-    }
-  },
-  mounted () {
-    this.getBeer()
-  },  
-  methods: {
-    async getBeer() {
-      axios.get(`https://morning-tor-81265.herokuapp.com/beers?id=${this.$route.params.id}`)
-      .then((response) => response.data)      
+      beer
     }
   }
+
 }
 
 </script>

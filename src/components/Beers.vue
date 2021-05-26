@@ -9,7 +9,7 @@
           <h4 class="mt-0 mb-1 text-center">{{beer.brand}}</h4>
           <p class="mb-0 mb-1 text-center">{{beer.description}}</p>
           <p class="mb-0 mb-1 text-center">ABV: {{beer.ABV}}</p>
-          <router-link :to="{name: 'BeerView', params: { id: beer.id },}">{{ beer.id }}</router-link>
+          <router-link :to="{name: 'BeerView', params: { id: id }}">{{ beer.id }}</router-link>
         </b-media>
       </ul>
     </div>
