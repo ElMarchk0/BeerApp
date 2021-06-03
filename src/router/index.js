@@ -3,7 +3,8 @@ import VueRouter from 'vue-router'
 
 import Home from '@/views/Home.vue'
 import About from '@/views/About.vue'
-
+import BeerView from '@/views/BeerView.vue';
+import Beer from '@/components/Beers.vue';
 
 Vue.use(VueRouter)
 
@@ -19,10 +20,16 @@ const routes = [
     component: About,
   },
   {
-    path: '/beer?=:id',
+    path: '/beer/:beerId',
     name: 'BeerView',
-    props: true,
-    component: () => '@/views/BeerView.vue'
+    component: BeerView,
+    props: true
+  },
+  {
+    path: '/beers',
+    name: 'Beers',
+    component: Beer,
+    props: true
   }
 
 ]
@@ -34,3 +41,4 @@ const router = new VueRouter({
 })
 
 export default router
+

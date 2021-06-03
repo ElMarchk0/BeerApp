@@ -1,34 +1,36 @@
 <template>
-  <div>
-    <div class="card" style="width: 25rem">    
+  <div class="m-auto" style="width: 60vh; margin: 5vmax; padding-bottom: 2em">
+
+  <div >
+    <div class="card" style="width: 25rem">
       <div class="card-body">
-        <h3 class="card-title">Beername: {{beer.name}}</h3>
-        <h5 class="card-title">{{beer.brand}}</h5>
+        <h3 class="card-title">Beername: {{ beer.name }}</h3>
+        <h5 class="card-title">{{ beer.brand }}</h5>
         Test
-      </div> 
+      </div>
       Test
     </div>
+  </div>
   </div>
 </template>
 
 <script>
-import { useRoute } from 'vue-router';
-import { useStore } from 'vuex';
-import { ref, onMounted } from 'vue';
-
 export default {
-  setup () {
-    const route = useRoute();
-    const store = useStore();
-    const beer = ref({})
-    onMounted(() => {
-      beer.value = store.getters.getSpecificBeer(route.params.id)
-    });
+  name: "BeerView",
+  props: ["beerId",'beers'],
+  mounted() {
+    this.getSpecificBeer()
+  },
+  data() {
     return {
-      beer
-    }
-  }
-
-}
-
+      beer: {},
+    };
+  },
+  methods: {
+    getSpecificBeer() {
+      this.beer = this.beers.filter((beer) => beer.id == this.beerId)[0];
+      console.log(this.beers)
+    },
+  },
+};
 </script>
