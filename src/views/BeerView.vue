@@ -4,11 +4,13 @@
   <div >
     <div class="card" style="width: 25rem">
       <div class="card-body">
-        <h3 class="card-title">Beername: {{ beer.name }}</h3>
+        <h3 class="card-title">{{ beer.name }}</h3>
         <h5 class="card-title">{{ beer.brand }}</h5>
-        Test
+        <h5 class="card-title">{{ beer.description }}</h5>
+        <h5 class="card-title">{{ beer.ABV }}</h5>
+        
       </div>
-      Test
+      
     </div>
   </div>
   </div>
@@ -34,3 +36,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  .card {
+    margin-top: 2em;
+  }
+</style>
