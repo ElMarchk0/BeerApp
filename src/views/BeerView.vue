@@ -1,5 +1,5 @@
 <template>
-  <div class="m-auto" style="width: 60vh; margin: 5vmax; padding-bottom: 2em" justify="center">
+  <div class="col d-flex justify-content-center" >
     <div class="beerCard">
       <div class="card" style="width: 25rem">
         <div class="card-body">

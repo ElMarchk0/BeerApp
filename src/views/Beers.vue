@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mx-auto">
     <ul v-for="beer in beersData" class="list-unstyled" :key="beer.id">
       <b-media tag="li">
         <br />
@@ -27,7 +27,7 @@ export default {
   props: ["beers"],
   mounted() {
     if (this.beers === null || this.beers === undefined) {
-      axios.get(`http://localhost:3000/beers`).then((data) => {
+      axios.get(`https://morning-tor-81265.herokuapp.com/beers`).then((data) => {
         this.beersData = data.data;
       });
     }
