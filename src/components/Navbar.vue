@@ -46,7 +46,7 @@ export default {
   props: ["search"],
   methods: {
     async getBeer(search) {
-      const res = await axios.get(`http://localhost:3000/beers?q=${search}`);
+      const res = await axios.get(`https://morning-tor-81265.herokuapp.com/beers?q=${search}`);
       this.$router.push({ name: "Beers", params: { beers: res.data } });
     },
   },

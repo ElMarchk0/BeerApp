@@ -1,7 +1,7 @@
 import { reactive, watch } from '@vue/composition-api'
 import axios from 'axios'
 
-const BEER_API_URL = `http://localhost:3000/beers`
+const BEER_API_URL = `https://morning-tor-81265.herokuapp.com/beers`
 
 export const beerApi = () => {
     const state = reactive({
