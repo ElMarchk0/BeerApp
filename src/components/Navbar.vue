@@ -4,7 +4,7 @@
       toggleable="lg"
       type="dark"
       variant="info"
-      class="navbar navbar-dark bg-dark justify-content-between"
+      class="navbar w-responsive navbar-dark bg-dark justify-content-between"
     >
       <b-navbar-brand href="/">The Great Victoria Beer API</b-navbar-brand>
 
@@ -57,8 +57,7 @@ export default {
     return {
       beerQuery,
       handleSubmit(event) {
-        event.preventDefault();
-        // emit('search', beerQuery.value)
+        event.preventDefault();        
         this.getBeer(beerQuery.value);
         console.log(beerQuery.value);
       },

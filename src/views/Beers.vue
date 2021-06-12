@@ -44,5 +44,6 @@ export default {
       this.$router.push({ name: "BeerView", params: { id: id } });
     },
   },
+  
 };
 </script>

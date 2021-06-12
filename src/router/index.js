@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 import About from '@/views/About.vue'
 import BeerView from '@/views/BeerView.vue';
-import Beer from '@/components/Beers.vue';
+import Beer from '@/views/Beers.vue';
 
 Vue.use(VueRouter)
 
