@@ -16,6 +16,7 @@ export const beerApi = () => {
       .then((response) => {        
         state.data = response.data      
         state.loading = false
+        console.log(response)
       })      
   })
 
