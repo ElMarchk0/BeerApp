@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto w-75 w-responsive" :adaptive="true" :resizable="true" style="padding-bottom: 2em">
+  <div class="mx-auto h-75 d-inline-block h-responsive" :adaptive="true" :resizable="true" style="padding-bottom: 2em">
  
   <div>
     <h4>Welcome to the Victoria Beer API</h4>

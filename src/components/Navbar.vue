@@ -4,7 +4,7 @@
       toggleable="lg"
       type="dark"
       variant="info"
-      class="navbar w-responsive navbar-dark bg-dark justify-content-between"
+      class="navbar w-responsive navbar-dark bg-dark justify-content-around"
     >
       <b-navbar-brand href="/">The Great Victoria Beer API</b-navbar-brand>
 

@@ -9,6 +9,7 @@
           <h5 class="card-title">{{ beer.ABV }}</h5>
         </div>
       </div>
+      <Review />
     </div>
     
   </div>
@@ -16,10 +17,13 @@
 </template>
 
 <script>
-
+import Review from '../components/Review'
 export default {
   name: "BeerView",
   props: ["beerId",'beers'],
+  components: {
+    Review
+  },
   
   mounted() {
     this.getSpecificBeer()
