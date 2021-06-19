@@ -1,24 +1,10 @@
-# vue_beer
+Start Vue build
+> npm run serve
 
-## Project setup
-```
-npm install
-```
+If you want to utilize the 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Run JSON-server api
+> npm run json-server
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Make get request to API
+> 

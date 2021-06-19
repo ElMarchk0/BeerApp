@@ -1,5 +1,5 @@
 <template>
-  <div class="submitReview">
+  <div class="submitReview" >
       <form v-on:submit.prevent="submitReview">
         <textarea type="text" id="content" v-model="review.content"></textarea>
         <br>
@@ -18,27 +18,20 @@ export default {
       review: {
         name: '',
         content: '',
+        beerId: ''
       }
     }
   },
   
   methods: {
     submitReview() {
-      // const review = new FormData();
-      // review.append('name', '')
-      // review.append('content', '')
-
       axios
         .post(`http://localhost:4000/reviews/new-review`, this.review)
-        .then((response) => {
-          
+        .then((response) => {          
           console.log(response.data)
         })
-
-    }
-    
-  },
-  
+    }    
+  },  
 }
 
 </script>
