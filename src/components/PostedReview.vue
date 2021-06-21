@@ -1,7 +1,7 @@
 <template>
   <div class="review-list">
     
-      <ul v-for="review in filteredReviews" :key="review.id">
+      <ul v-for="review in reviewData" :key="review.beerId">
         <h2>{{review.content}}</h2>
         <h3>{{review.name}}</h3>
       </ul>
@@ -14,26 +14,22 @@ import axios from "axios";
 export default {
   name: "PostedReview",
   props: ["reviews"],
-
-  data() {
-    return {
-      filteredReviews: []
-    }
-  },
   mounted() {
     if (this.reviews === null || this.reviews === undefined || this.reviews.beerId === this.beerId) {
-      axios.get(`http://localhost:4000/reviews`).then((res) => {
+      axios.get(`http://localhost:4000/reviews`).then((data) => {
         
-        const reviews = res.data
-        this.filteredReviews = reviews.filter(review => {
-          return review.beerId.match(this.$route.params.id)
-        })
-        console.log(res)
+        this.reviewData = data.data;
+        
+        console.log(data)
       });
     }
   },
   
-}
+  data() {
+    return {
+      reviewData: this.reviews,
+    };
+  },
 
   // methods: {
   //   navigate(id) {
@@ -41,5 +37,5 @@ export default {
   //   },
   // },
   
-
+};
 </script>
