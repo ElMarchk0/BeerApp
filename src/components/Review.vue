@@ -18,7 +18,7 @@ export default {
       review: {
         name: '',
         content: '',
-        beerId: ''
+        beerId: this.$route.params.beerId
       }
     }
   },
