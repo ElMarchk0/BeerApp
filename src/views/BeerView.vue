@@ -10,18 +10,21 @@
           
         </div>
       </div>
-      <Review :beerId="beer.id"/>
+      <Review />
+      <PostedReview />
     </div>    
   </div>  
 </template>
 
 <script>
 import Review from '../components/Review'
+import PostedReview from '../components/PostedReview'
 export default {
   name: "BeerView",
   props: ["beerId",'beers'], 
   components: {
-    Review
+    Review,
+    PostedReview
   },
      
   mounted() {
@@ -29,27 +32,13 @@ export default {
   },
   data() {
     return {
-      beer: {
-        name: {
-          type: String,
-        },
-        brewery: {
-          type: String,
-        },
-        ABV: {
-          type: Number
-        },
-        id: {
-          type: Number
-        }
-      },
+      beer: {},
     };
   },
   methods: {
     getSpecificBeer() {
       this.beer = this.beers.filter((beer) => beer.id == this.beerId)[0];
-      console.log(this.beers)
-      
+      console.log(this.beers)      
     },
     
   },
