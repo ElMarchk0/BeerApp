@@ -6,7 +6,7 @@
           <h3 class="card-title">{{ beer.name }}</h3>
           <h5 class="card-title">{{ beer.brand }}</h5>
           <h5 class="card-title">{{ beer.description }}</h5>
-          <h5 class="card-title">{{ beer.ABV }}</h5>
+          <h5 class="card-title">ABV: {{ beer.ABV }}</h5>
           
         </div>
       </div>

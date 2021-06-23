@@ -1,7 +1,7 @@
 <template>
   <div class="submitReview" >
       <form v-on:submit.prevent="submitReview">
-        <textarea type="text" id="content" v-model="review.content"></textarea>
+        <textarea type="textarea" label="Material textarea" :rows="5" v-model="review.content"></textarea>
         <br>
         <input type="text" id="name" v-model="review.name">
         <input type="submit" value="Submit">        
