@@ -1,5 +1,9 @@
 <template>
-  <div class="about">
-    <h2>This is an about page</h2>
+  <div class="mx-auto w-75 w-responsive" :adaptive="true" :resizable="true" style="padding-bottom: 2em">
+    <b-card title="About" >
+    <b-card-text>
+      The Victoria Beer API was inspired my love of crafft beer and a desire to learn web development. 
+    </b-card-text>
+  </b-card>
   </div>
 </template>
