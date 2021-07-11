@@ -10,8 +10,12 @@
           
         </div>
       </div>
-      <Review />
-      <PostedReview />
+      <div class="review">
+        <Review />        
+      </div>
+      <div class="reviewList">
+        <PostedReview />
+      </div>
     </div>    
   </div>  
 </template>
@@ -48,6 +52,12 @@ export default {
 
 <style scoped>
   .card {
+    margin-top: 2em;
+  }
+  .review {
+    margin-top: 2em;
+  }
+  .reviewList {
     margin-top: 2em;
   }
 </style>
