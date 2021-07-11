@@ -1,10 +1,10 @@
 <template>
   <div class="reviews">
     <ul v-for="review in reviewData" class="list-unstyled" :key="review.date">
-       <b-media tag="li">
-        <h3>{{review.name}}</h3>
-        <p>{{review.content}}</p>
-        <b-form-rating class="rating-md-no-border" variant="info" :value="review.rating" show no-border readonly></b-form-rating>
+       <b-media tag="li" class="my-1">
+        <p class="mb-0">{{review.content}}</p>
+        <h5 class="mt-0 mb-1">{{review.name}}</h5>        
+        <b-form-rating class="rating-md-no-border mb-2" variant="primary" :value="review.rating" show no-border readonly></b-form-rating>
       </b-media>
     </ul>    
   </div>
@@ -25,9 +25,7 @@
         })      
       }, 
     
-      methods() {
-        
-      },    
+         
       
       data() {
         return {

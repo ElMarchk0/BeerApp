@@ -13,22 +13,18 @@
       <div class="review">
         <Review />        
       </div>
-      <div class="reviewList">
-        <PostedReview />
-      </div>
+      
     </div>    
   </div>  
 </template>
 
 <script>
 import Review from '../components/Review'
-import PostedReview from '../components/PostedReview'
 export default {
   name: "BeerView",
   props: ["beerId",'beers'], 
   components: {
-    Review,
-    PostedReview
+    Review
   },
      
   mounted() {
@@ -57,7 +53,5 @@ export default {
   .review {
     margin-top: 2em;
   }
-  .reviewList {
-    margin-top: 2em;
-  }
+  
 </style>

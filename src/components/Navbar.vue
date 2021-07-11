@@ -20,6 +20,7 @@
               class="btn btn-outline-success my-2 my-sm-0"
               type="submit"
               value="Search"
+              variant="primary"
             />
           </b-nav-form>
           <b-navbar-nav class="mx-auto">

@@ -4,13 +4,13 @@
       <b-media tag="li">
         <br />
         <h2 class="mt-0 mb-1 text-center">
-        <router-link
+        <b-link
               :to="{
                 name: 'BeerView',
                 params: { beerId: beer.id, beers: beersData },
               }"
               >
-        {{ beer.name }}</router-link
+        {{ beer.name }}</b-link
             >
         </h2>
         <h4 class="mt-0 mb-1 text-center">{{ beer.brand }}</h4>
