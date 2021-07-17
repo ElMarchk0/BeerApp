@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mx-auto w-75 d-inline-block w-responsive" :adaptive="true" :resizable="true">
     <ul v-for="beer in beersData" class="list-unstyled" :key="beer.id">
       <b-media tag="li">
         <br />

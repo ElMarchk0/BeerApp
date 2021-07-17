@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <div class="submitReview" >
       <form v-on:submit.prevent="submitReview">
         <b-form-textarea type="textarea" label="Material textarea" :rows="5" v-model="review.content" placeholder="Write a review... "></b-form-textarea>
@@ -11,7 +11,7 @@
       </form>
     </div>
     <div class="reviewList">
-        <PostedReview />
+        <PostedReview :key="review"/>
       </div>
   </div>
 </template>
@@ -32,6 +32,7 @@ export default {
         beerId: this.$route.params.beerId,
         rating: null,
         date: new Date(),
+        review: 0
       }
     }
   },
@@ -44,10 +45,11 @@ export default {
         axios
           .post(`http://192.168.0.26:4000/reviews/new-review`, this.review)
           .then((response) => {          
-            console.log(response.data)
+            console.log(response.data)            
           })
       }
-    },
+      this.review++
+    }, 
     
   } 
 }
