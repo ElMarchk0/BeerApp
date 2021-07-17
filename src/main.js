@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueCompositionApi from '@vue/composition-api';
 import App from './App.vue';
 import VueRouter from 'vue-router'
+import Vuex from 'vuex'
 
 import { BootstrapVue } from 'bootstrap-vue'
 
@@ -13,6 +14,7 @@ Vue.config.productionTip = false;
 Vue.use(VueCompositionApi);
 Vue.use(BootstrapVue)
 Vue.use(VueRouter)
+Vue.use(Vuex)
 
 new Vue({
   router,
