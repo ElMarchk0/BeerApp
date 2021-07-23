@@ -20,20 +20,24 @@ export default {
   name: "BeerView",
   props: ["beerId",'beers'],
 
-  mounted() {
-    this.getSpecificBeer()
-  },
   data() {
     return {
-      beer: {},
+      beer: {
+        name: '',
+        id: '',
+        brand: '',
+        ABV: '',
+        description: ''
+      },
     };
   },
-  methods: {
-    getSpecificBeer() {
-      this.beer = this.beers.filter((beer) => beer.id == this.beerId)[0];
-      console.log(this.beers)
-    },
-  },  
+  mounted() {
+    axios.get(`https://morning-tor-81265.herokuapp.com/beers`).then((data) => {        
+      const beers = data.data        
+      this.beer = beers.filter((beer) => beer.id == this.$route.params.beerId)[0];      
+      console.log(this.beer)
+    })
+  }  
 };
 </script>
 
