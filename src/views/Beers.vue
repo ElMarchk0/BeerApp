@@ -27,7 +27,7 @@ export default {
   props: ["beers"],
   mounted() {
     if (this.beers === null || this.beers === undefined) {
-      axios.get(`https://morning-tor-81265.herokuapp.com/beers`).then((data) => {
+      axios.get(process.env.VUE_APP_BEER_API_URL).then((data) => {
         this.beersData = data.data;
       });
     }

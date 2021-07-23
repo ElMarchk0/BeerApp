@@ -33,7 +33,7 @@ export default {
     };
   },
   mounted() {
-    axios.get(`https://morning-tor-81265.herokuapp.com/beers`).then((data) => {        
+    axios.get(process.env.VUE_APP_BEER_API_URL).then((data) => {        
       const beers = data.data        
       this.beer = beers.filter((beer) => beer.id == this.$route.params.beerId)[0];      
       console.log(this.beer)
