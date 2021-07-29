@@ -32,13 +32,11 @@ export default {
       });
     }
   },
-
   data() {
     return {
       beersData: this.beers,
     };
   },
-
   methods: {
     navigate(id) {
       this.$router.push({ name: "BeerView", params: { id: id } });

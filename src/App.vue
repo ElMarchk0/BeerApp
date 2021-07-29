@@ -11,20 +11,17 @@
 <script>
 import Navbar from '@/components/Navbar.vue'
 import { beerApi } from '@/hooks/beerApi.js'
-
 export default {
   components: {    
     Navbar,
   },
-
   setup() {
     const state = beerApi()
       return {
       state,
       handleSearch(searchTerm) {
         state.loading = true;
-        state.search = searchTerm;
-        
+        state.search = searchTerm;        
       }
     };
   }
@@ -38,15 +35,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-    
-  
 }
 
 .beers{
     margin-top: 1em;
     padding-bottom: 1em
   }
-
-
-
 </style>

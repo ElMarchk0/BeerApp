@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 import About from '@/views/About.vue'
 import BeerView from '@/views/BeerView.vue';
-import Beer from '@/views/Beers.vue';
+import Beers from '@/views/Beers.vue';
 
 Vue.use(VueRouter)
 
@@ -26,18 +26,25 @@ const routes = [
     props: true
   },
   {
-    path: '/beers',
+    path: '/beers=?:search',
     name: 'Beers',
-    component: Beer,
+    component: Beers,
     props: true
   }
 
 ]
 
+const originalPush = VueRouter.prototype.push
+
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  duplicateNavigationPolicy: 'ignore'
 })
 
 export default router
