@@ -26,7 +26,7 @@ const routes = [
     props: true
   },
   {
-    path: '/beers=?:search',
+    path: '/beers',
     name: 'Beers',
     component: Beers,
     props: true

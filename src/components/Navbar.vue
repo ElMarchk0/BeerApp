@@ -1,5 +1,4 @@
 71 lines (66 sloc)  1.91 KB
- 
 <template>
   <div>
     <b-navbar
@@ -22,8 +21,7 @@
               class="btn btn-outline-success my-2 my-sm-0"
               type="submit"
               value="Search"
-              variant="primary"
-              
+              variant="primary"              
             />
           </b-nav-form>
           <b-navbar-nav class="mx-auto">
@@ -45,7 +43,6 @@
 <script>
 import { ref } from "@vue/composition-api";
 import axios from "axios";
-import { useRouter, useRoute } from 'vue-router'
 
 export default {
   name: "Navbar",
@@ -53,9 +50,7 @@ export default {
   
   setup() {
     const beerQuery = ref();
-    const router = useRouter()
-    const route = useRoute()
-
+   
     return {
       beerQuery,      
       handleSubmit(event) {
@@ -68,18 +63,9 @@ export default {
       },
       async getBeer(search) {
         const res = await axios.get(`${process.env.VUE_APP_BEER_API_URL}?q=${search}`);
-        this.$router.push({ name: "Beers"+this.search, params: { beers: res.data } });
-        router.push({
-        name: 'Beers',
-        query: {
-          ...route.search,
-        },
-      })
-      },
-      
-    };
-    
-      
+        this.$router.push({ name: "Beers", params: { beers: res.data } });       
+      },      
+    };    
   },
 };
 </script>

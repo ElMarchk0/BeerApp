@@ -1,4 +1,4 @@
-import { reactive, watch } from '@vue/composition-api'
+import { reactive, watchEffect } from '@vue/composition-api'
 import axios from 'axios'
 
 export const beerApi = () => {
@@ -8,7 +8,7 @@ export const beerApi = () => {
     data: []
   })
 
-  watch(() => {
+  watchEffect(() => {
     axios
       .get(`${process.env.VUE_APP_BEER_API_URL}?q=${state.search}`)
       .then((response) => {

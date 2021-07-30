@@ -25,8 +25,8 @@ import axios from "axios";
 export default {
   name: "Beers",
   props: ["beers"],
-  mounted() {
-    if (this.beers === null || this.beers === undefined) {
+  updated() {
+    if (this.beers === null || this.beers === undefined || this.beers === this.beers) {
       axios.get(process.env.VUE_APP_BEER_API_URL).then((data) => {
         this.beersData = data.data;
       });
