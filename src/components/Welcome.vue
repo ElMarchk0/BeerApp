@@ -1,10 +1,11 @@
 <template>
-  <div class="mx-auto w-75 w-responsive" :adaptive="true" :resizable="true" style="padding-bottom: 2em">
+  <div class="mx-auto h-75 d-inline-block h-responsive" :adaptive="true" :resizable="true" style="padding-bottom: 2em">
  
   <div>
     <h4>Welcome to the Victoria Beer API</h4>
     
-      <b-card img-src="https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_65,w_845/v1/clients/vancouverbc/victoria_644cf3bd-09d3-4aba-8f00-5c6206cd1812.jpg" img-alt="Card image" img-top>
+      <b-card img-src="https://lh3.googleusercontent.com/pw/AM-JKLVoZlaMXcakSOghp1haLgo9fET6rFZiz0jMglTTS2uahAkRAtRyUGAsYHbq-ZJvNJf5hnsNKDFQmJsqmEoKjB7mA66JOZ_HySsv_rWnzUpqHS8mCR0FLoHr4N8E9oULtUh1n0cPfuLn-m-BPVtlJEXd=w952-h597-no?authuser=0" img-alt="Card image" img-top>
+      
         <b-card-text>
           Search for beer brewed in the Greater Victoria Area by name, type and brewery!
         </b-card-text>
@@ -20,6 +21,14 @@
 
 
 export default{
-  name: 'Welcome'
+  name: 'Welcome',
+  data(){
+    return {
+      image: {
+        landing: require('../assets/beerpic.png')
+      }
+    }
+    }
+  
 }
 </script>

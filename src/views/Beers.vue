@@ -1,16 +1,16 @@
 <template>
-  <div>
+  <div class="mx-auto w-75 d-inline-block w-responsive" :adaptive="true" :resizable="true">
     <ul v-for="beer in beersData" class="list-unstyled" :key="beer.id">
       <b-media tag="li">
         <br />
         <h2 class="mt-0 mb-1 text-center">
-        <router-link
+        <b-link
               :to="{
                 name: 'BeerView',
                 params: { beerId: beer.id, beers: beersData },
               }"
               >
-        {{ beer.name }}</router-link
+        {{ beer.name }}</b-link
             >
         </h2>
         <h4 class="mt-0 mb-1 text-center">{{ beer.brand }}</h4>
@@ -25,20 +25,18 @@ import axios from "axios";
 export default {
   name: "Beers",
   props: ["beers"],
-  mounted() {
-    if (this.beers === null || this.beers === undefined) {
-      axios.get(`https://morning-tor-81265.herokuapp.com/beers`).then((data) => {
+  updated() {
+    if (this.beers === null || this.beers === undefined || this.beers === this.beers) {
+      axios.get(process.env.VUE_APP_BEER_API_URL).then((data) => {
         this.beersData = data.data;
       });
     }
   },
-
   data() {
     return {
       beersData: this.beers,
     };
   },
-
   methods: {
     navigate(id) {
       this.$router.push({ name: "BeerView", params: { id: id } });

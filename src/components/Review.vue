@@ -1,35 +1,63 @@
 <template>
-  <div class="submitReview">
+  <div >
+    <div class="submitReview" >
       <form v-on:submit.prevent="submitReview">
-        <input type="text" id="review" v-model="review">
-        <input type="submit" value="Submit">
+        <b-form-textarea type="textarea" label="Material textarea" :rows="5" v-model="review.content" placeholder="Write a review... "></b-form-textarea>
+        <br>
+        <b-form-input type="text" id="name" placeholder="name" v-model="review.name"></b-form-input>
+        <b-form-rating v-model="review.rating" variant="primary" class="my-2" ></b-form-rating>
+        
+        <b-button type="submit" variant="primary" class="my-1">Submit Review</b-button>  
       </form>
     </div>
+    <div class="reviewList">
+        <PostedReview :key="review"/>
+      </div>
+  </div>
 </template>
 
 <script>
 import axios from 'axios';
+import PostedReview from './PostedReview'
 export default {  
   name: 'Review',
- 
-  data() {
+  components: {
+    PostedReview
+  },
+  data(){
     return {
-      data: {
-        review: null,
+      review: {
+        name: '',
+        content: '',
+        beerId: this.$route.params.beerId,
+        rating: null,
+        date: new Date(),
+        review: 0
       }
     }
   },
+  
   methods: {
     submitReview() {
-      // const review = new Review()
-      // review.append('content', this.content)
-      axios
-        .post("http://localhost:4000/reviews/new-review", {'review': this.review})
-        .then((data) => {
-          this.review = ''
-          console.log(data)
-        })
-    }
-  }
+      if (this.review.name === '' || this.review.content === '' || this.review.rating === null ) {
+        alert('Please fill out every field.')
+      } else {
+        axios
+          .post(`http://192.168.0.26:4000/reviews/new-review`, this.review)
+          .then((response) => {          
+            console.log(response.data)            
+          })
+      }
+      this.review++
+    }, 
+    
+  } 
 }
+
 </script>
+
+<style >
+  .reviewList {
+    margin-top: 2em;
+  }
+</style>

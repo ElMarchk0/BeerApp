@@ -16,26 +16,29 @@
 </template>
 
 <script>
-
+import axios from 'axios'
 export default {
   name: "BeerView",
   props: ["beerId",'beers'],
-  
-  mounted() {
-    this.getSpecificBeer()
-  },
+
   data() {
     return {
-      beer: {},
+      beer: {
+        name: '',
+        id: '',
+        brand: '',
+        ABV: '',
+        description: ''
+      },
     };
   },
-  methods: {
-    getSpecificBeer() {
-      this.beer = this.beers.filter((beer) => beer.id == this.beerId)[0];
-      console.log(this.beers)
-    },
-  },
-  
+  mounted() {
+    axios.get(process.env.VUE_APP_BEER_API_URL).then((data) => {        
+      const beers = data.data        
+      this.beer = beers.filter((beer) => beer.id == this.$route.params.beerId)[0];      
+      console.log(this.beer)
+    })
+  }  
 };
 </script>
 

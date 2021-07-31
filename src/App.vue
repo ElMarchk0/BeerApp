@@ -4,19 +4,17 @@
       :search="state.search" 
       @search="handleSearch"
     /> 
-    <router-view />
+    <router-view :key="$route.fullPath"/>
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue'
 import { beerApi } from '@/hooks/beerApi.js'
-
 export default {
   components: {    
     Navbar,
   },
-
   setup() {
     const state = beerApi()
       return {
@@ -24,7 +22,7 @@ export default {
       handleSearch(searchTerm) {
         state.loading = true;
         state.search = searchTerm;
-        
+              
       }
     };
   }
@@ -38,15 +36,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-    
-  
 }
 
 .beers{
     margin-top: 1em;
     padding-bottom: 1em
   }
-
-
-
 </style>

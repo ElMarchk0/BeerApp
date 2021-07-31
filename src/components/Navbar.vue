@@ -1,10 +1,11 @@
+71 lines (66 sloc)  1.91 KB
 <template>
   <div>
     <b-navbar
       toggleable="lg"
       type="dark"
       variant="info"
-      class="navbar w-responsive navbar-dark bg-dark justify-content-between"
+      class="navbar w-responsive navbar-dark bg-dark justify-content-around"
     >
       <b-navbar-brand href="/">The Great Victoria Beer API</b-navbar-brand>
 
@@ -20,6 +21,7 @@
               class="btn btn-outline-success my-2 my-sm-0"
               type="submit"
               value="Search"
+              variant="primary"              
             />
           </b-nav-form>
           <b-navbar-nav class="mx-auto">
@@ -41,21 +43,16 @@
 <script>
 import { ref } from "@vue/composition-api";
 import axios from "axios";
+
 export default {
   name: "Navbar",
   props: ["search"],
-  methods: {
-    async getBeer(search) {
-      const res = await axios.get(`https://morning-tor-81265.herokuapp.com/beers?q=${search}`);
-      this.$router.push({ name: "Beers", params: { beers: res.data } });
-    },
-  },
-
-  setup({ search }, ) {
-    const beerQuery = ref(search);
-
+  
+  setup() {
+    const beerQuery = ref();
+   
     return {
-      beerQuery,
+      beerQuery,      
       handleSubmit(event) {
         event.preventDefault();        
         this.getBeer(beerQuery.value);
@@ -64,7 +61,13 @@ export default {
       handleChange(event) {
         beerQuery.value = event.target.value;
       },
-    };
+      async getBeer(search) {
+        const res = await axios.get(`${process.env.VUE_APP_BEER_API_URL}?q=${search}`);
+        this.$router.push({ name: "Beers", params: { beers: res.data }, query: {search: search} })
+          
+        ;       
+      },      
+    };    
   },
 };
 </script>
