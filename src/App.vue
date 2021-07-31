@@ -4,7 +4,7 @@
       :search="state.search" 
       @search="handleSearch"
     /> 
-    <router-view />
+    <router-view :key="$route.fullPath"/>
   </div>
 </template>
 
@@ -21,7 +21,8 @@ export default {
       state,
       handleSearch(searchTerm) {
         state.loading = true;
-        state.search = searchTerm;        
+        state.search = searchTerm;
+              
       }
     };
   }
