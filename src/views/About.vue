@@ -4,5 +4,6 @@
     <b-card-text>
       The Victoria Beer API was inspired by my love of craft beer and a desire to learn web development. 
     </b-card-text>
+    </b-card>
   </div>
 </template>
