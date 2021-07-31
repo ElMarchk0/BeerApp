@@ -1,10 +1,7 @@
-Start Vue build
+Set up the project on your own system
+> npm install --save
 > npm run serve
-
-If you want to utilize the 
 
 Run JSON-server api
 > npm run json-server
 
-Make get request to API
-> 

@@ -1,5 +1,8 @@
 <template>
   <div class="about">
-    <h2>This is an about page</h2>
+    <b-card title="About" >
+    <b-card-text>
+      The Victoria Beer API was inspired by my love of craft beer and a desire to learn web development. 
+    </b-card-text>
   </div>
 </template>
