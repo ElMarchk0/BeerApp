@@ -1,6 +1,6 @@
 <template>
 
-  <div class="mx-auto w-50 d-inline-block w-responsive" :adaptive="true" :resizable="true" >
+  <div class="mx-auto w-75 d-inline-block w-responsive" :adaptive="true" :resizable="true" >
     <div class="beerCard">
       <div class="card" >
         <div class="card-body">

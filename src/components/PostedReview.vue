@@ -13,20 +13,29 @@
 <script>
     import axios from "axios";
     export default {
-      name: "PostedReview",
       props: ["reviews"],
-      mounted () {
-        axios.get(`http://192.168.0.26:4000/reviews`).then((data) => {        
-          const reviews = data.data        
-          this.reviewData = reviews.filter(review => review.beerId === this.$route.params.beerId).sort((a, b) => (a.id > b.id ? 1 : -1))       
-          console.log(this.reviewData)
-        })
-      },  
-      data() {
+     
+      name: "PostedReview",
+      data () {
         return {
-          reviewData: []
+          reviewData: null
         }
       },
+      created () {
+        this.fetchData();
+      },
+      methods: {
+        fetchData() {
+          axios.get(`http://localhost:8000/api/reviews/?search=${this.$route.params.beerId}`)
+            .then((data) => {        
+              const reviews = data.data
+                   
+              this.reviewData = reviews   
+                
+              console.log(this.reviewData)
+            })          
+        }
+      }
     }
     
     </script>
