@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
-    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "start": "node server.js",
-    "json-server": "json-server --nc src/api/beersV2.json"
+    "json-server": "json-server --watch src/api/beersV2.json"
   },
   "dependencies": {
     "@vue/composition-api": "^1.0.2",

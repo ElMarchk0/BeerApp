@@ -5,11 +5,11 @@
         <br />
         <h2 class="mt-0 mb-1 text-center">
         <b-link
-              :to="{
-                name: 'BeerView',
-                params: { beerId: beer.id, beers: beersData },
-              }"
-              >
+            :to="{
+              name: 'BeerView',
+              params: { beerId: beer.id, beers: beersData },
+            }"
+            >
         {{ beer.name }}</b-link
             >
         </h2>
@@ -22,15 +22,15 @@
 
 <script>
 import axios from "axios";
+import { beerApiUrl } from "../utils/constants";
+
 export default {
   name: "Beers",
   props: ["beers"],
   updated() {
-    if (this.beers === null || this.beers === undefined || this.beers === this.beers) {
-      axios.get(process.env.VUE_APP_BEER_API_URL).then((data) => {
-        this.beersData = data.data;
-      });
-    }
+    axios.get(beerApiUrl).then((data) => {
+      this.beersData = data.data;
+    });
   },
   data() {
     return {
@@ -41,7 +41,6 @@ export default {
     navigate(id) {
       this.$router.push({ name: "BeerView", params: { id: id } });
     },
-  },
-  
+  },  
 };
 </script>

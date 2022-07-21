@@ -21,8 +21,7 @@ export default {
       state,
       handleSearch(searchTerm) {
         state.loading = true;
-        state.search = searchTerm;
-              
+        state.search = searchTerm;              
       }
     };
   }
@@ -39,7 +38,7 @@ export default {
 }
 
 .beers{
-    margin-top: 1em;
-    padding-bottom: 1em
-  }
+  margin-top: 1em;
+  padding-bottom: 1em
+}
 </style>

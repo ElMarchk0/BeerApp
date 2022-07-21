@@ -11,31 +11,27 @@
 </template>
 
 <script>
-    import axios from "axios";
-    export default {
-      props: ["reviews"],
-     
-      name: "PostedReview",
-      data () {
-        return {
-          reviewData: null
-        }
-      },
-      created () {
-        this.fetchData();
-      },
-      methods: {
-        fetchData() {
-          axios.get(`http://localhost:8000/api/reviews/?search=${this.$route.params.beerId}`)
-            .then((data) => {        
-              const reviews = data.data
-                   
-              this.reviewData = reviews   
-                
-              console.log(this.reviewData)
-            })          
-        }
+  import axios from "axios";
+  export default {
+    props: ["reviews"],
+    
+    name: "PostedReview",
+    data () {
+      return {
+        reviewData: null
+      }
+    },
+    created () {
+      this.fetchData();
+    },
+    methods: {
+      fetchData() {
+        axios.get(`http://localhost:8000/api/reviews/?search=${this.$route.params.beerId}`)
+        .then((data) => {        
+          const reviews = data.data                   
+          this.reviewData = reviews   
+        })          
       }
     }
-    
-    </script>
+  }
+</script>

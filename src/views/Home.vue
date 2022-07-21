@@ -20,6 +20,5 @@ export default {
     justify-content: center;
     margin: 2.5vmax;   
     z-index: 1;
-  }
-  
+  }  
 </style>

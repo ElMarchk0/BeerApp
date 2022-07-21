@@ -8,9 +8,7 @@
       class="navbar w-responsive navbar-dark bg-dark justify-content-around"
     >
       <b-navbar-brand href="/">The Great Victoria Beer API</b-navbar-brand>
-
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
       <b-collapse id="nav-collapse" is-nav>
         <!-- Search Input -->
         <b-navbar-nav class="mx-auto">
@@ -43,6 +41,7 @@
 <script>
 import { ref } from "@vue/composition-api";
 import axios from "axios";
+import { beerApiUrl } from "../utils/constants";
 
 export default {
   name: "Navbar",
@@ -62,10 +61,8 @@ export default {
         beerQuery.value = event.target.value;
       },
       async getBeer(search) {
-        const res = await axios.get(`${process.env.VUE_APP_BEER_API_URL}?q=${search}`);
-        this.$router.push({ name: "Beers", params: { beers: res.data }, query: {search: search} })
-          
-        ;       
+        const res = await axios.get(`${beerApiUrl}?q=${search}`);
+        this.$router.push({ name: "Beers", params: { beers: res.data }, query: {search: search} });       
       },      
     };    
   },

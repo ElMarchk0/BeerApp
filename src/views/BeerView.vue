@@ -1,5 +1,4 @@
 <template>
-
   <div class="mx-auto w-75 d-inline-block w-responsive" :adaptive="true" :resizable="true" >
     <div class="beerCard">
       <div class="card" >
@@ -9,8 +8,7 @@
           <h5 class="card-title">{{ beer.description }}</h5>
           <h5 class="card-title">{{ beer.ABV }}</h5>
         </div>
-      </div>
-  
+      </div>  
     </div>
     <div class="mx-auto" style="padding: 2em" >
       <Review />        
@@ -20,6 +18,7 @@
 
 <script>
 import axios from 'axios'
+import { beerApiUrl } from '../utils/constants'
 import Review from '../components/Review'
 export default {
   name: "BeerView",
@@ -40,7 +39,7 @@ export default {
     };
   },
   mounted() {
-    axios.get(process.env.VUE_APP_BEER_API_URL).then((data) => {        
+    axios.get(beerApiUrl).then((data) => {        
       const beers = data.data        
       this.beer = beers.filter((beer) => beer.id == this.$route.params.beerId)[0];      
       console.log(this.beer)

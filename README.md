@@ -1,7 +1,12 @@
-Set up the project on your own system
+###
+Welcome to the Great Victoria Beer API!
+
+Install dependencies
 > npm install --save
+
+Run the frontend
 > npm run serve
 
-Run JSON-server api
+Run the beer api
 > npm run json-server
 

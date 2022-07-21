@@ -49,11 +49,9 @@ export default {
           })
       }
       this.review++
-    }, 
-    
+    },     
   } 
 }
-
 </script>
 
 <style >
